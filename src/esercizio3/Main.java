@@ -15,12 +15,20 @@ public class Main {
         rubrica.put(ammorMi.getNome(), ammorMi.getNumero());
         aggiungereContatto(rubrica, zioFranco);
 
+        deletareContatto(rubrica, "Me");
+
         
-
-
     }
     public static void aggiungereContatto(Map<String, Long> r, Contatto x){
         r.put(x.getNome(), x.getNumero());
+    }
+    public  static  void  deletareContatto(Map<String, Long> r, String nome){
+        if(r.containsKey(nome)){
+            r.remove(nome);
+            System.out.println("Contatto rimosso: " +nome);
+        } else {
+            System.out.println("Non esiste nessun contatto " +nome);
+        }
     }
 
     }
