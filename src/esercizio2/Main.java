@@ -10,6 +10,7 @@ public class Main {
         ArrayList<Integer> lista2 = new ArrayList<>(lista);
         Collections.reverse(lista2);
         System.out.println(creareListeSpecchiate(lista, lista2));
+        System.out.println((stamparePosizioni(lista, false)));
 
     }
     public static ArrayList<Integer> creareTotNumCasuali( int n){
@@ -28,4 +29,18 @@ public class Main {
         return lista3;
     }
 
+    public static ArrayList<Integer>  stamparePosizioni(ArrayList<Integer> lista, boolean boool) {
+        ArrayList<Integer> lista4 = new ArrayList<>();
+        if(boool) {
+            for (int i = 1; i < lista.size(); i += 2) {
+               lista4.add(lista.get(i));
+            }
+        }else {
+            for (int i = 0; i < lista.size(); i += 2) {
+                lista4.add(lista.get(i));
+        }
+            }
+        return lista4;
+        }
     }
+
