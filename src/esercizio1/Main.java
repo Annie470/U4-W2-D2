@@ -15,7 +15,7 @@ public class Main {
                 System.out.println("Inserisci un NUMERO!");
             }
         }
-        
+
         System.out.println("Inserisci n parole: ");
 
         Set<String> setParole = new HashSet<>();
