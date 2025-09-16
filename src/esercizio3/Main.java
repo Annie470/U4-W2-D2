@@ -18,6 +18,7 @@ public class Main {
         deletareContatto(rubrica, "Me");
 
         System.out.println(cercareNome(rubrica, 34555666L));
+        System.out.println(cercareNumero(rubrica, "Frank"));
 
 
     }
@@ -32,12 +33,20 @@ public class Main {
             System.out.println("Non esiste nessun contatto " +nome);
         }
     }
-    public static String cercareNome(Map<String, Long> r, long numero){
-        for (String nome : r.keySet()){
-            if(r.get(nome) == numero) {
+    public static String cercareNome(Map<String, Long> r, long numero) {
+        for (String nome : r.keySet()) {
+            if (r.get(nome) == numero) {
                 return nome;
             }
-        }return "Nessun contatto trovato";
+        }
+        return "Nessun contatto trovato";
+    } 
+    public static Long cercareNumero(Map<String, Long> r, String nome) {
+        if (r.containsKey(nome)) {
+            return r.get(nome);
+        } else {
+            System.out.println("Nessun contatto trovato");
+            return null ;
+        }
     }
-
     }
